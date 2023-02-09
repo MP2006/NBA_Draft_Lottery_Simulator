@@ -54,6 +54,7 @@ def draftSimulation(numberList):
 
 
 def positionChange(teamOrder):
+    #hi
     firstChangeList = []
     changeDict = {}
     changeList = []
@@ -102,6 +103,8 @@ def lotterySim(teamOrder):
     recordList = recordOrder(teamOrder)
     fullList = lotteryTeam + otherTeam
     fullPick = lotteryPick + otherPick
+    for i in range(len(fullPick)):
+        fullPick[i] += 30
     totalRecord = record + fullRecord
     table.add_column("PICK", lotteryPick)
     table.add_column("               TEAM", teamOrder)
@@ -132,6 +135,7 @@ def lotterySim(teamOrder):
     print(f"\t4. {teamOrder[3]}")
     time.sleep(2)
     print(f"\nCongratulations to the {teamOrder[0]} with the 1st overall pick!")
+    time.sleep(2)
     print("\nThis concludes the 2022 NBA Draft Lottery.")
     print("\nThank you for using the NBA Draft Lottery Simulator!")
 
@@ -184,7 +188,7 @@ def main():
     while choice not in choiceList:
         choice = input("Invalid input, please choose again: ").lower()
     if choice == "b":
-        print("\nThe NBA Draft begins:")
+        print("\nThe NBA Draft Lottery begins:")
     while choice != "a" and x != 0:
         if x > 3:
             print("\n---------------------------")
@@ -200,7 +204,7 @@ def main():
             print(f"\t{top4Random[0]}")
             print(f"\t{top4Random[3]}")
             print(f"\t{top4Random[1]}")
-            print(f"\t{top4Random[2]}\n")
+            print(f"\t{top4Random[2]}")
         elif x == 3:
             print("\n---------------------------")
             print(f"The {x}rd pick belongs to:")
